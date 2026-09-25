@@ -1,12 +1,608 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>ReGame</title>
-</head>
-<body>
+<style>
 
-<h1>ReGame test</h1>
-<p>dit is een test</p>
+* {
 
-</body>
-</html>
+  box-sizing: border-box;
+
+}
+ 
+.regame {
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #0b0d12;
+
+  color: #f5f7fb;
+
+  padding: 0;
+
+  margin: 0;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+}
+ 
+.regame a {
+
+  text-decoration: none;
+
+}
+ 
+.regame-hero {
+
+  padding: 60px 25px;
+
+  text-align: center;
+
+  background: linear-gradient(145deg, #0b0d12, #111722);
+
+}
+ 
+.regame-badge {
+
+  display: inline-block;
+
+  padding: 8px 12px;
+
+  border: 1px solid #2f8cff;
+
+  border-radius: 999px;
+
+  color: #7eb8ff;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+}
+ 
+.regame h1 {
+
+  font-size: 50px;
+
+  line-height: 1;
+
+  margin: 20px 0;
+
+}
+ 
+.regame-blue {
+
+  color: #2f8cff;
+
+}
+ 
+.regame-text {
+
+  color: #aeb7c7;
+
+  line-height: 1.6;
+
+  max-width: 650px;
+
+  margin: 0 auto 25px;
+
+}
+ 
+.regame-button {
+
+  display: inline-block;
+
+  background: #2f8cff;
+
+  color: white !important;
+
+  padding: 15px 24px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  margin: 5px;
+
+}
+ 
+.regame-button:hover {
+
+  background: #1e76df;
+
+}
+ 
+.regame-section {
+
+  padding: 50px 25px;
+
+  max-width: 1100px;
+
+  margin: auto;
+
+}
+ 
+.regame-title {
+
+  text-align: center;
+
+  font-size: 32px;
+
+  margin-bottom: 10px;
+
+}
+ 
+.regame-subtitle {
+
+  text-align: center;
+
+  color: #9da7b8;
+
+  max-width: 650px;
+
+  margin: 0 auto 30px;
+
+  line-height: 1.5;
+
+}
+ 
+.regame-products {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+}
+ 
+.regame-card {
+
+  background: #121722;
+
+  border: 1px solid #242c3b;
+
+  border-radius: 15px;
+
+  padding: 25px;
+
+}
+ 
+.regame-icon {
+
+  font-size: 40px;
+
+}
+ 
+.regame-card h3 {
+
+  margin-bottom: 8px;
+
+}
+ 
+.regame-card p {
+
+  color: #aeb7c7;
+
+  line-height: 1.5;
+
+}
+ 
+.regame-price {
+
+  font-size: 23px;
+
+  font-weight: bold;
+
+  margin-top: 18px;
+
+}
+ 
+.regame-info {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+}
+ 
+.regame-info-card {
+
+  background: #10141c;
+
+  border: 1px solid #222a38;
+
+  border-radius: 15px;
+
+  padding: 25px;
+
+  text-align: center;
+
+}
+ 
+.regame-info-card b {
+
+  display: block;
+
+  font-size: 18px;
+
+  margin-bottom: 10px;
+
+}
+ 
+.regame-info-card span {
+
+  color: #9da7b8;
+
+  line-height: 1.5;
+
+}
+ 
+.regame-contact {
+
+  background: #121722;
+
+  border: 1px solid #2a3344;
+
+  border-radius: 18px;
+
+  padding: 35px 20px;
+
+  text-align: center;
+
+}
+ 
+.regame-contact-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+}
+ 
+.regame-contact-button {
+
+  display: inline-block;
+
+  padding: 14px 20px;
+
+  border-radius: 10px;
+
+  background: #0e1219;
+
+  border: 1px solid #30394b;
+
+  color: white !important;
+
+  font-weight: bold;
+
+}
+ 
+.regame-contact-button.primary {
+
+  background: #2f8cff;
+
+  border-color: #2f8cff;
+
+}
+ 
+.regame-footer {
+
+  text-align: center;
+
+  padding: 25px;
+
+  color: #7f8999;
+
+  border-top: 1px solid #202532;
+
+}
+ 
+/* MOBIEL */
+ 
+@media (max-width: 700px) {
+ 
+  .regame-hero {
+
+    padding: 45px 18px;
+
+  }
+ 
+  .regame h1 {
+
+    font-size: 40px;
+
+  }
+ 
+  .regame-text {
+
+    font-size: 16px;
+
+  }
+ 
+  .regame-section {
+
+    padding: 40px 18px;
+
+  }
+ 
+  .regame-title {
+
+    font-size: 28px;
+
+  }
+ 
+  .regame-products,
+
+  .regame-info {
+
+    grid-template-columns: 1fr;
+
+  }
+ 
+  .regame-card,
+
+  .regame-info-card {
+
+    padding: 22px;
+
+  }
+ 
+  .regame-button {
+
+    width: 100%;
+
+    margin: 5px 0;
+
+  }
+ 
+  .regame-contact-buttons {
+
+    flex-direction: column;
+
+  }
+ 
+  .regame-contact-button {
+
+    width: 100%;
+
+  }
+
+}
+</style>
+ 
+ 
+<div class="regame">
+ 
+  <!-- HERO -->
+ 
+  <div class="regame-hero">
+ 
+    <span class="regame-badge">
+
+      GETEST • SCHOONGEMAAKT • BETAALBAAR
+</span>
+ 
+    <h1>
+
+      Game meer.<br>
+<span class="regame-blue">Betaal minder.</span>
+</h1>
+ 
+    <p class="regame-text">
+
+      ReGame geeft gebruikte gaming-accessoires een tweede leven.
+
+      We testen en maken producten netjes, zodat jij betaalbaar kunt blijven gamen.
+</p>
+ 
+    <a class="regame-button" href="#regame-producten">
+
+      Bekijk producten
+</a>
+ 
+  </div>
+ 
+ 
+  <!-- PRODUCTEN -->
+ 
+  <div class="regame-section" id="regame-producten">
+ 
+    <h2 class="regame-title">
+
+      Onze producten
+</h2>
+ 
+    <p class="regame-subtitle">
+
+      Betaalbare gaming-accessoires voor gamers met een kleiner budget.
+</p>
+ 
+    <div class="regame-products">
+ 
+      <div class="regame-card">
+ 
+        <div class="regame-icon">🎮</div>
+ 
+        <h3>
+
+          PS4 / PS5 Controllers
+</h3>
+ 
+        <p>
+
+          Gebruikte controllers die zijn getest en netjes gemaakt.
+</p>
+ 
+        <div class="regame-price">
+
+          Vanaf €19,99
+</div>
+ 
+      </div>
+ 
+ 
+      <div class="regame-card">
+ 
+        <div class="regame-icon">🎧</div>
+ 
+        <h3>
+
+          Gaming Headsets
+</h3>
+ 
+        <p>
+
+          Geteste headsets voor PlayStation, Xbox en andere systemen.
+</p>
+ 
+        <div class="regame-price">
+
+          Vanaf €14,99
+</div>
+ 
+      </div>
+ 
+ 
+      <div class="regame-card">
+ 
+        <div class="regame-icon">🖱️</div>
+ 
+        <h3>
+
+          Gaming Accessoires
+</h3>
+ 
+        <p>
+
+          Handige accessoires voor je gaming-setup.
+</p>
+ 
+        <div class="regame-price">
+
+          Vanaf €4,99
+</div>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+ 
+  <!-- OVER REGAME -->
+ 
+  <div class="regame-section">
+ 
+    <h2 class="regame-title">
+
+      Waarom ReGame?
+</h2>
+ 
+    <p class="regame-subtitle">
+
+      Wij willen gaming toegankelijker maken voor gamers met een beperkt budget.
+</p>
+ 
+    <div class="regame-info">
+ 
+      <div class="regame-info-card">
+<b>🎮 Getest</b>
+<span>
+
+          Producten worden gecontroleerd voordat ze worden verkocht.
+</span>
+</div>
+ 
+      <div class="regame-info-card">
+<b>🧼 Netjes</b>
+<span>
+
+          Gebruikte producten worden schoongemaakt en verzorgd.
+</span>
+</div>
+ 
+      <div class="regame-info-card">
+<b>♻️ Tweede leven</b>
+<span>
+
+          Goede gaming-spullen krijgen een nieuwe eigenaar.
+</span>
+</div>
+ 
+    </div>
+ 
+  </div>
+ 
+ 
+  <!-- CONTACT -->
+ 
+  <div class="regame-section">
+ 
+    <div class="regame-contact">
+ 
+      <h2>
+
+        Contact met ReGame
+</h2>
+ 
+      <p class="regame-subtitle">
+
+        Interesse in een product of wil je weten wat er momenteel op voorraad is?
+
+        Neem contact met ons op.
+</p>
+ 
+      <div class="regame-contact-buttons">
+ 
+        <a
+
+          class="regame-contact-button primary"
+
+          href="https://wa.me/31649646777"
+
+          target="_blank">
+
+          📱 WhatsApp
+</a>
+ 
+        <a
+
+          class="regame-contact-button"
+
+          href="https://www.tiktok.com/@tthomass0"
+
+          target="_blank">
+
+          🎵 TikTok
+</a>
+ 
+        <a
+
+          class="regame-contact-button"
+
+          href="mailto:19204@waerdenborch.nl">
+
+          📧 E-mail
+</a>
+ 
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+ 
+  <div class="regame-footer">
+
+    © 2026 ReGame — Game meer. Betaal minder.
+</div>
+ 
+</div>
+ 
